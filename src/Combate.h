@@ -7,6 +7,9 @@
 #include "Archivos.h"
 using namespace std;
 
+// Usa la función que ya está en Minijuegos.h
+extern void subirNivelSiCorresponde();
+
 // Estructura y datos de los jefes
 struct Jefe {
     string nombre;
@@ -20,21 +23,12 @@ Jefe jefes[] = {
 };
 const int NUM_JEFES = 3;
 
-// Para asignar jefe según posición en el mapa (debes ajustar según tu mapa real)
+// Para asignar jefe según posición en el mapa (ajusta si cambias posiciones)
 int jefeIDporCasilla(int fila, int columna) {
-    if (fila == 0 && columna == 5) return 0; // Cambia esto según la posición real de los jefes
+    if (fila == 0 && columna == 5) return 0;
     if (fila == 4 && columna == 6) return 1;
     if (fila == 6 && columna == 1) return 2;
     return 0;
-}
-
-void subirNivelSiCorresponde() {
-    if (jugador.experiencia >= 30) {
-        jugador.nivel++;
-        jugador.vida = 100 + (jugador.nivel - 1) * 10;
-        jugador.experiencia = 0;
-        cout << "¡Subiste a nivel " << jugador.nivel << "! Tu vida máxima y fuerza aumentaron.\n";
-    }
 }
 
 void iniciarCombate(int fila, int columna) {
@@ -52,15 +46,15 @@ void iniciarCombate(int fila, int columna) {
         int bono = jugador.nivel * 2;
 
         if (op == '1') {
-            danioE = rand() % 13 + 7 + bono; // Tu ataque sube con nivel
+            danioE = rand() % 13 + 7 + bono;
             vidaJefe -= danioE;
-            cout << "Atacaste a " << jefe.nombre << " e hiciste " << danioE << " de dano!\n";
+            cout << "Atacaste a " << jefe.nombre << " e hiciste " << danioE << " de daño!\n";
         } else if (op == '2') {
             danioJ /= 2;
-            cout << "Te defendiste! Dano recibido reducido.\n";
+            cout << "Te defendiste! Daño recibido reducido.\n";
         }
         jugador.vida -= danioJ;
-        cout << jefe.nombre << " te hizo " << danioJ << " de dano.\n";
+        cout << jefe.nombre << " te hizo " << danioJ << " de daño.\n";
     }
 
     if (jugador.vida <= 0) {

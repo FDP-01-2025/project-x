@@ -70,7 +70,7 @@ void interactuar(char tipoCasilla, int fila, int columna) {
             break;
         }
         case 'J':
-            iniciarCombate();
+            iniciarCombate(fila,columna);
             break;
         default:
             break;
