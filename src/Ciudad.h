@@ -6,7 +6,7 @@
 using namespace std;
 
 void entrarCiudad() {
-    cout << "\n[Ciudad] Bienvenido a la ciudad.\n";
+    cout << "\n[Ciudad] Bienvenido a la ciudad de Secret Con+inen+!\n";
     cout << "Puedes descansar y recuperar tu energia.\n";
     if (jugador.monedas < 5) {
         cout << "Monedas insuficientes. No puedes curarte.\n";

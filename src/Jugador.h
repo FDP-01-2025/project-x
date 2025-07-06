@@ -16,7 +16,7 @@ struct Jugador {
 Jugador jugador;
 
 void crearJugador(int fila, int columna) {
-    cout << "Ingresa tu nombre de aventurero: ";
+    cout << "Ingresa tu nombre de aventurero de Secret Con+inen+: ";
     cin.ignore();
     getline(cin, jugador.nombre);
     jugador.vida = 100;
@@ -24,11 +24,11 @@ void crearJugador(int fila, int columna) {
     jugador.puntosExplorados = 0;
     jugador.fila = fila;
     jugador.columna = columna;
-    cout << "¡Jugador creado exitosamente!" << endl;
+    cout << "¡Jugador creado exitosamente en Secret Con+inen+!" << endl;
 }
 
 void mostrarEstado() {
-    cout << "\n--- ESTADO DEL JUGADOR ---\n";
+    cout << "\n--- ESTADO DEL JUGADOR EN SECRET CON+INEN+ ---\n";
     cout << "Nombre: " << jugador.nombre << "\n";
     cout << "Vida: " << jugador.vida << "\n";
     cout << "Monedas: " << jugador.monedas << "\n";

@@ -1,4 +1,3 @@
-
 #ifndef JUEGO_H
 #define JUEGO_H
 
@@ -50,7 +49,8 @@ void interactuar(char tipoCasilla) {
 }
 
 void mostrarMapa() {
-    system("cls"); // Cambiar por "clear" en Linux/Mac
+    system("cls"); // Cambia por "clear" en Linux/Mac
+    cout << "\n--- Mapa de Secret Con+inen+ ---\n";
     for (int i = 0; i < FILAS; ++i) {
         for (int j = 0; j < COLUMNAS; ++j) {
             cout << mapa[i][j] << "  ";
@@ -73,12 +73,12 @@ bool moverJugador(char direccion) {
     }
 
     if (nuevaFila < 0 || nuevaFila >= FILAS || nuevaColumna < 0 || nuevaColumna >= COLUMNAS) {
-        cout << "\nNo puedes salir del mapa!\n";
+        cout << "\nNo puedes salir del mapa de Secret Con+inen+!\n";
         return false;
     }
 
     if (mapa[nuevaFila][nuevaColumna] == 'X') {
-        cout << "\nHay un obstaculo!\n";
+        cout << "\nHay un obstáculo!\n";
         return false;
     }
 
@@ -94,7 +94,7 @@ bool moverJugador(char direccion) {
 
 void iniciarJuego() {
     srand(time(0));
-    crearJugador();
+    crearJugador(jugadorFila, jugadorColumna);
 
     char opcion;
     do {
@@ -106,7 +106,7 @@ void iniciarJuego() {
         moverJugador(opcion);
     } while (true);
 
-    cout << "\nGracias por jugar!\n";
+    cout << "\nGracias por jugar Secret Con+inen+!\n";
 }
 
 #endif
