@@ -1,4 +1,3 @@
-
 #ifndef JUGADOR_H
 #define JUGADOR_H
 
@@ -7,28 +6,34 @@
 using namespace std;
 
 struct Jugador {
-    string nombre;
+    std::string nombre;
     int vida;
     int monedas;
+    int puntosExplorados;
+    int fila, columna;
 };
 
 Jugador jugador;
 
-void crearJugador() {
-    cout << "¡Bienvenido a CódigoLandia!\n";
+void crearJugador(int fila, int columna) {
     cout << "Ingresa tu nombre de aventurero: ";
     cin.ignore();
     getline(cin, jugador.nombre);
     jugador.vida = 100;
     jugador.monedas = 0;
-    cout << "Jugador creado exitosamente.\n";
+    jugador.puntosExplorados = 0;
+    jugador.fila = fila;
+    jugador.columna = columna;
+    cout << "¡Jugador creado exitosamente!" << endl;
 }
 
 void mostrarEstado() {
     cout << "\n--- ESTADO DEL JUGADOR ---\n";
-    cout << "Nombre: " << jugador.nombre << endl;
-    cout << "Vida: " << jugador.vida << endl;
-    cout << "Monedas: " << jugador.monedas << endl;
+    cout << "Nombre: " << jugador.nombre << "\n";
+    cout << "Vida: " << jugador.vida << "\n";
+    cout << "Monedas: " << jugador.monedas << "\n";
+    cout << "Puntos explorados: " << jugador.puntosExplorados << "\n";
+    cout << "Posicion: (" << jugador.fila << ", " << jugador.columna << ")\n";
     cout << "---------------------------\n";
 }
 
