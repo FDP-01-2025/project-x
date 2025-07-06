@@ -7,7 +7,7 @@
 using namespace std;
 
 void guardarPartida() {
-    ofstream archivo("PartidaSC.txt");
+    ofstream archivo("savegame.txt");
     if (archivo.is_open()) {
         archivo << jugador.nombre << endl;
         archivo << jugador.vida << endl;
@@ -15,6 +15,8 @@ void guardarPartida() {
         archivo << jugador.puntosExplorados << endl;
         archivo << jugador.fila << endl;
         archivo << jugador.columna << endl;
+        archivo << jugador.nivel << endl;
+        archivo << jugador.experiencia << endl;
         archivo.close();
         cout << "¡Partida de Secret Con+inen+ guardada!" << endl;
     } else {
@@ -23,7 +25,7 @@ void guardarPartida() {
 }
 
 bool cargarPartida() {
-    ifstream archivo("PartidaSC.txt");
+    ifstream archivo("savegame.txt");
     if (archivo.is_open()) {
         getline(archivo, jugador.nombre);
         archivo >> jugador.vida;
@@ -31,6 +33,8 @@ bool cargarPartida() {
         archivo >> jugador.puntosExplorados;
         archivo >> jugador.fila;
         archivo >> jugador.columna;
+        archivo >> jugador.nivel;
+        archivo >> jugador.experiencia;
         archivo.close();
         cout << "¡Partida de Secret Con+inen+ cargada correctamente!\n";
         return true;
