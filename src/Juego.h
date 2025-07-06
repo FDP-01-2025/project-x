@@ -22,13 +22,42 @@ char mapa[FILAS][COLUMNAS] = {
     {'.', 'J', '.', 'E', '.', 'X', '.'}
 };
 
+// Para saber cuál ciudad es cada 'E', creamos una matriz auxiliar con IDs:
+int ciudadesID[FILAS][COLUMNAS] = {
+    {-1, -1, 0, -1, -1, -1, -1},
+    {-1, -1, -1, -1, -1, -1, -1},
+    {-1, -1, -1, -1, -1, -1, 1},
+    {-1, -1, -1, -1, -1, -1, -1},
+    {2,  -1, -1, -1, -1, -1, -1},
+    {-1, -1, -1, -1, -1, -1, -1},
+    {-1, -1, -1,  3, -1, -1, -1}
+};
+
 int jugadorFila = 2;
 int jugadorColumna = 0;
 
-void interactuar(char tipoCasilla) {
+void mostrarMapa() {
+    system("cls"); // Cambia por "clear" en Linux/Mac
+    cout << "\n--- Mapa de Secret Con+inen+ ---\n";
+    cout << "P = Tú   E = Ciudad   J = Jefe   T = Minijuego   X = Obstáculo   . = Camino\n";
+    cout << "---------------------------------------------------------------\n";
+    for (int i = 0; i < FILAS; ++i) {
+        for (int j = 0; j < COLUMNAS; ++j) {
+            cout << mapa[i][j] << "  ";
+        }
+        cout << endl;
+    }
+    cout << "\nUsa W/A/S/D para moverte, Q para salir\n";
+}
+
+void interactuar(char tipoCasilla, int fila, int columna) {
     switch (tipoCasilla) {
         case 'E':
-            entrarCiudad();
+            // Usa la matriz de IDs para pasar el índice de la ciudad
+            if (ciudadesID[fila][columna] != -1)
+                entrarCiudad(ciudadesID[fila][columna]);
+            else
+                entrarCiudad(0); // Por si acaso, default
             break;
         case 'T': {
             int minijuego = rand() % 3;
@@ -46,18 +75,6 @@ void interactuar(char tipoCasilla) {
         default:
             break;
     }
-}
-
-void mostrarMapa() {
-    system("cls"); // Cambia por "clear" en Linux/Mac
-    cout << "\n--- Mapa de Secret Con+inen+ ---\n";
-    for (int i = 0; i < FILAS; ++i) {
-        for (int j = 0; j < COLUMNAS; ++j) {
-            cout << mapa[i][j] << "  ";
-        }
-        cout << endl;
-    }
-    cout << "\nUsa W/A/S/D para moverte, Q para salir\n";
 }
 
 bool moverJugador(char direccion) {
@@ -88,13 +105,13 @@ bool moverJugador(char direccion) {
     jugadorColumna = nuevaColumna;
     mapa[jugadorFila][jugadorColumna] = 'P';
 
-    interactuar(tipoCasilla);
+    interactuar(tipoCasilla, nuevaFila, nuevaColumna);
     return true;
 }
 
 void iniciarJuego() {
     srand(time(0));
-    crearJugador(jugadorFila, jugadorColumna);
+    crearJugador(jugadorFila, jugadorColumna); // El fix del nombre se hace en Jugador.h
 
     char opcion;
     do {

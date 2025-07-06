@@ -5,8 +5,17 @@
 #include "Jugador.h"
 using namespace std;
 
-void entrarCiudad() {
-    cout << "\n[Ciudad] Bienvenido a la ciudad de Secret Con+inen+!\n";
+// Nombres de las ciudades
+string nombresCiudades[] = {
+    "Ciudad Binaria",
+    "Puerto Stack",
+    "Villa Recursiva",
+    "Aldea Algoritmica"
+};
+
+void entrarCiudad(int idCiudad) {
+    string nombreCiudad = (idCiudad >= 0 && idCiudad < 4) ? nombresCiudades[idCiudad] : "Ciudad Misteriosa";
+    cout << "\n[Ciudad] Bienvenido a " << nombreCiudad << " de Secret Con+inen+!\n";
     cout << "Puedes descansar y recuperar tu energia.\n";
     if (jugador.monedas < 5) {
         cout << "Monedas insuficientes. No puedes curarte.\n";
@@ -16,7 +25,7 @@ void entrarCiudad() {
     char respuesta;
     cin >> respuesta;
     if (respuesta == 's' || respuesta == 'S') {
-        jugador.vida = 100;
+        jugador.vida = 100 + (jugador.nivel - 1) * 10; // Si subió de nivel, cura hasta la nueva vida máxima
         jugador.monedas -= 5;
         cout << "Te has curado completamente!\n";
     } else {
