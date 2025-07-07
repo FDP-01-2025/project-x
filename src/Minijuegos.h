@@ -75,7 +75,7 @@ void jugarParOImpar() {
     }
 }
 
-// Minijuegos nivel 2 (si los agregas)
+// Minijuegos nivel 2 
 void minijuegoReflejos() {
     string secuencias[] = {"asd", "qwe", "zxc", "wsad"};
     int idx = rand() % 4;

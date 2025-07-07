@@ -22,7 +22,7 @@ char mapa[FILAS][COLUMNAS] = {
     {'.', 'J', '.', 'E', '.', 'X', '.'}
 };
 
-// Para saber cuál ciudad es cada 'E', creamos una matriz auxiliar con IDs:
+// Para saber cuál ciudad es cada 'E'
 int ciudadesID[FILAS][COLUMNAS] = {
     {-1, -1, 0, -1, -1, -1, -1},
     {-1, -1, -1, -1, -1, -1, -1},
@@ -37,7 +37,7 @@ int jugadorFila = 2;
 int jugadorColumna = 0;
 
 void mostrarMapa() {
-    system("cls"); // Cambia por "clear" en Linux/Mac
+    system("cls"); 
     cout << "\n--- Mapa de Secret Con+inen+ ---\n";
     cout << "P = Tú   E = Ciudad   J = Jefe   T = Minijuego   X = Obstáculo   . = Camino\n";
     cout << "---------------------------------------------------------------\n";
@@ -57,7 +57,7 @@ void interactuar(char tipoCasilla, int fila, int columna) {
             if (ciudadesID[fila][columna] != -1)
                 entrarCiudad(ciudadesID[fila][columna]);
             else
-                entrarCiudad(0); // Por si acaso, default
+                entrarCiudad(0); 
             break;
         case 'T': {
             int minijuego = rand() % 3;
@@ -111,7 +111,7 @@ bool moverJugador(char direccion) {
 
 void iniciarJuego() {
     srand(time(0));
-    crearJugador(jugadorFila, jugadorColumna); // El fix del nombre se hace en Jugador.h
+    crearJugador(jugadorFila, jugadorColumna); 
 
     char opcion;
     do {

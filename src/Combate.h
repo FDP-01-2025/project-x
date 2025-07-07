@@ -23,7 +23,7 @@ Jefe jefes[] = {
 };
 const int NUM_JEFES = 3;
 
-// Para asignar jefe según posición en el mapa (ajusta si cambias posiciones)
+// Para asignar jefe según posición en el mapa 
 int jefeIDporCasilla(int fila, int columna) {
     if (fila == 0 && columna == 5) return 0;
     if (fila == 4 && columna == 6) return 1;

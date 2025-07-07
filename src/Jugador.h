@@ -21,7 +21,7 @@ Jugador jugador;
 void crearJugador(int fila, int columna) {
     cout << "Ingresa tu nombre de aventurero de Secret Con+inen+: ";
     cin.clear();
-    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ¡Esto arregla la primera letra!
+    cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
     getline(cin, jugador.nombre);
     jugador.vida = 100;
     jugador.monedas = 0;
