@@ -63,7 +63,7 @@ void reiniciarJuego() {
 void mostrarMapa() {
     system("cls"); // Cambia por "clear" en Linux/Mac
     cout << "\n--- Mapa de Secret Con+inen+ ---\n";
-    cout << "P = Tú   E = Ciudad   J = Jefe   T = Minijuego   X = Obstáculo   . = Camino\n";
+    cout << "P = Tu   E = Ciudad   J = Jefe   T = Minijuego   X = Obstasculo   . = Camino\n";
     cout << "---------------------------------------------------------------\n";
     for (int i = 0; i < FILAS; ++i) {
         for (int j = 0; j < COLUMNAS; ++j) {
@@ -76,10 +76,11 @@ void mostrarMapa() {
 void interactuar(char tipoCasilla, int fila, int columna) {
     switch (tipoCasilla) {
         case 'E':
-            if (ciudadesID[fila][columna] != -1)
+            if (ciudadesID[fila][columna] != -1){ 
                 entrarCiudad(ciudadesID[fila][columna]);
-            else
+            }else{ 
                 entrarCiudad(0);
+            }
             break;
         case 'T': {
             int minijuego = rand() % 3;

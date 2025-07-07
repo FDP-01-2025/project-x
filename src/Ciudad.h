@@ -5,7 +5,7 @@
 #include "Jugador.h"
 using namespace std;
 
-// Nombres de las ciudades
+// Nombres de las ciudades (al menos tantas como IDs en ciudadesID)
 string nombresCiudades[] = {
     "Ciudad Binaria",
     "Puerto Stack",
@@ -21,11 +21,11 @@ void entrarCiudad(int idCiudad) {
         cout << "Monedas insuficientes. No puedes curarte.\n";
         return;
     }
-    cout << "Deseas curarte por 5 monedas? (s/n): ";
+    cout << "¿Deseas curarte por 5 monedas? (s/n): ";
     char respuesta;
     cin >> respuesta;
     if (respuesta == 's' || respuesta == 'S') {
-        jugador.vida = 100 + (jugador.nivel - 1) * 10; // Si subió de nivel, cura hasta la nueva vida máxima
+        jugador.vida = 100 + (jugador.nivel - 1) * 10; // Cura a vida máxima
         jugador.monedas -= 5;
         cout << "Te has curado completamente!\n";
     } else {
