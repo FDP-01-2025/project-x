@@ -7,7 +7,7 @@
 using namespace std;
 
 struct Jugador {
-    std::string nombre;
+    string nombre;
     int vida;
     int monedas;
     int puntosExplorados;
