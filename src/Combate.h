@@ -5,9 +5,9 @@
 #include <cstdlib>
 #include "Jugador.h"
 #include "Archivos.h"
+#include "Juego.h" 
 using namespace std;
 
-// Usa la función que ya está en Minijuegos.h
 extern void subirNivelSiCorresponde();
 
 // Estructura y datos de los jefes
@@ -23,7 +23,7 @@ Jefe jefes[] = {
 };
 const int NUM_JEFES = 3;
 
-// Para asignar jefe según posición en el mapa 
+// Para asignar jefe según posición en el mapa
 int jefeIDporCasilla(int fila, int columna) {
     if (fila == 0 && columna == 5) return 0;
     if (fila == 4 && columna == 6) return 1;
@@ -31,6 +31,7 @@ int jefeIDporCasilla(int fila, int columna) {
     return 0;
 }
 
+extern void reiniciarJuego();
 void iniciarCombate(int fila, int columna) {
     int idJefe = jefeIDporCasilla(fila, columna);
     Jefe jefe = jefes[idJefe];
@@ -60,11 +61,16 @@ void iniciarCombate(int fila, int columna) {
     if (jugador.vida <= 0) {
         cout << "\nHas muerto contra " << jefe.nombre << ". ¿Deseas empezar de 0 (0) o seguir con tu último punto de guardado (1)? ";
         int eleccion; cin >> eleccion;
-        if (eleccion == 1 && cargarPartida()) {
-            cout << "¡Continuando desde tu último guardado!\n";
+        if (eleccion == 1) {
+            if (cargarPartida()) {
+                cout << "¡Continuando desde tu último guardado!\n";
+            } else {
+                cout << "No tienes ninguna partida guardada. Comenzando de nuevo.\n";
+                reiniciarJuego();
+            }
         } else {
             cout << "¡Comenzando de nuevo!\n";
-            crearJugador(2, 0); // Posición inicial
+            reiniciarJuego();
         }
     } else {
         cout << "\n¡Has derrotado a " << jefe.nombre << "!\n";

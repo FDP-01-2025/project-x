@@ -19,12 +19,12 @@ void subirNivelSiCorresponde() {
 // Minijuegos nivel 1
 void jugarAdivinaNumero() {
     int num = rand() % 10 + 1, intento;
-    cout << "\n[Adivina el Número 1-10]\n";
+    cout << "\n[Adivina el Numero 1-10]\n";
     for (int i = 0; i < 3; ++i) {
         cout << "Intento #" << (i + 1) << ": ";
         cin >> intento;
         if (intento == num) {
-            cout << "¡Correcto! +5 monedas y +10 de experiencia\n";
+            cout << "Correcto! +5 monedas y +10 de experiencia\n";
             jugador.monedas += 5;
             jugador.experiencia += 10;
             subirNivelSiCorresponde();
@@ -40,11 +40,11 @@ void jugarAdivinaNumero() {
 void jugarTrivia() {
     int puntos = 0;
     char r;
-    cout << "\n[Trivia Secret Con+inen+]\n1. ¿Qué lenguaje estás usando? (A) Python (B) Java (C) C++\n> "; cin >> r;
+    cout << "\n[Trivia Secret Con+inen+]\n1. Que lenguaje estas usando? (A) Python (B) Java (C) C++\n> "; cin >> r;
     if (r == 'C' || r == 'c') puntos++;
-    cout << "2. Capital de El Salvador? (A) San Salvador (B) Santa Ana (C) La Unión\n> "; cin >> r;
+    cout << "2. Capital de El Salvador? (A) San Salvador (B) Santa Ana (C) La Union\n> "; cin >> r;
     if (r == 'A' || r == 'a') puntos++;
-    cout << "3. ¿Cuánto es 5 x 3? (A) 15 (B) 10 (C) 20\n> "; cin >> r;
+    cout << "3. ¿Cuanto es 5 x 3? (A) 15 (B) 10 (C) 20\n> "; cin >> r;
     if (r == 'A' || r == 'a') puntos++;
     if (puntos >= 2) {
         cout << "¡Ganaste! +5 monedas y +10 de experiencia\n";
@@ -61,7 +61,7 @@ void jugarParOImpar() {
     int num = rand() % 10 + 1;
     char eleccion;
     cout << "\n[Par o Impar] Elige P o I: "; cin >> eleccion;
-    cout << "Número generado: " << num << endl;
+    cout << "Numero generado: " << num << endl;
     bool par = (num % 2 == 0);
     if ((par && (eleccion == 'P' || eleccion == 'p')) ||
         (!par && (eleccion == 'I' || eleccion == 'i'))) {
@@ -80,7 +80,7 @@ void minijuegoReflejos() {
     string secuencias[] = {"asd", "qwe", "zxc", "wsad"};
     int idx = rand() % 4;
     string input;
-    cout << "[Reflejos Secret Con+inen+] Escribe esta secuencia lo más rápido posible: " << secuencias[idx] << endl;
+    cout << "[Reflejos Secret Con+inen+] Escribe esta secuencia lo más rapido posible: " << secuencias[idx] << endl;
     cin >> input;
     if (input == secuencias[idx]) {
         cout << "¡Perfecto! +10 monedas y +15 de experiencia" << endl;
@@ -88,7 +88,7 @@ void minijuegoReflejos() {
         jugador.experiencia += 15;
         subirNivelSiCorresponde();
     } else {
-        cout << "Fallaste, intenta ser más rápido y exacto." << endl;
+        cout << "Fallaste, intenta ser mas rapido y exacto." << endl;
         cout << "Has perdido este minijuego.\n";
     }
 }
@@ -107,7 +107,7 @@ void minijuegoDados() {
         cout << "Perdiste la ronda. Sin recompensa." << endl;
         cout << "Has perdido este minijuego.\n";
     } else {
-        cout << "Empate, lanza de nuevo la próxima vez." << endl;
+        cout << "Empate, lanza de nuevo la proxima vez." << endl;
         cout << "Has perdido este minijuego.\n";
     }
 }
