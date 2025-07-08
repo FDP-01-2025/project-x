@@ -33,7 +33,7 @@ const char ORIGINAL_MAP[ROWS][COLS] = {
     {'.', 'J', '.', 'E', '.', 'X', '.'}
 };
 
-// City IDs per map position
+// City IDs para cada posición en el mapa
 int citiesID[ROWS][COLS] = {
     {-1, -1, 0, -1, -1, -1, -1},
     {-1, -1, -1, -1, -1, -1, -1},
