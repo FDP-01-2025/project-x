@@ -6,6 +6,7 @@
 #include <ctime>
 using namespace std;
 
+//Subida de nivel segun la experiencia del jugador
 void levelUpIfNeeded() {
     if (player.experience >= 30) {
         player.level++;
@@ -15,7 +16,7 @@ void levelUpIfNeeded() {
         pause();
     }
 }
-
+    
 void playGuessNumber() {
     int num = rand() % 10 + 1, guess;
     cout << "\n[Guess the Number 1-10]\n";
