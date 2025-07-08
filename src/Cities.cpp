@@ -11,6 +11,7 @@ string cityNames[] = {
     "Algorithmic Hamlet"
 };
 
+//Reconocer ciudades por ID
 void enterCity(int cityId) {
     string cityName = (cityId >= 0 && cityId < 4) ? cityNames[cityId] : "Mysterious City";
     cout << "\n[City] Welcome to " << cityName << " in Secret Con+inen+!\n";
