@@ -7,6 +7,7 @@ using namespace std;
 
 extern char map[7][7];
 
+//Guarda todos los datos del jugador y el mapa en un archivo
 void saveGame() {
     ofstream file("savegame.txt");
     if (file.is_open()) {
