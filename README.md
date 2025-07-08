@@ -32,15 +32,22 @@ Un rpg simple, donde el jugador deberá explorar un continente (mapa), formado p
 3. Corre el código
 
 4. TECLAS IMPORTANTES
-   W ---> Moverse hacia arriba 
-   S ---> Moverse hacia abajo
-   A ---> Moverse hacia la izquierda
-   D ---> Moverse hacia la derecha
-   G ---> Guardar el progreso
-   Q ---> Salir del juego
-   Y/N ---> Responder preguntas como "Deseas curarte?" o "Cargar partida?"
 
-   5. Simbolos del Mapa
+   -  W ---> Moverse hacia arriba 
+
+   -  S ---> Moverse hacia abajo
+
+   -  A ---> Moverse hacia la izquierda
+
+   -  D ---> Moverse hacia la derecha
+
+   -  G ---> Guardar el progreso
+
+   -  Q ---> Salir del juego
+
+   -  Y/N ---> Responder preguntas como "Deseas curarte?" o "Cargar partida?"
+
+   5- Simbolos del Mapa
       -	P → Tu posición actual
 
       -	E → Entrada a una ciudad (te permite curarte)
