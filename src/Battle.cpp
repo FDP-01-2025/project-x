@@ -1,3 +1,4 @@
+
 #include "Battle.h"
 #include "Player.h"
 #include "Archive.h"
@@ -19,7 +20,6 @@ Boss bosses[] = {
     {"General Byte", 80, 12},
     {"Queen Algorithmia", 110, 18}
 };
-const int NUM_BOSSES = 3;
 
 int bossIDbyCell(int row, int col) {
     if (row == 0 && col == 5) return 0;
@@ -30,6 +30,12 @@ int bossIDbyCell(int row, int col) {
 
 void startBattle(int row, int col) {
     int id = bossIDbyCell(row, col);
+    if (player.bossesDefeated[id]) {
+        cout << "\nThis boss has already been defeated.\n";
+        pause();
+        return;
+    }
+
     Boss boss = bosses[id];
     int bossHealth = boss.baseHealth + (player.level - 1) * 7;
     cout << "\n[Boss] " << boss.name << " appears (Health: " << bossHealth << ", Attack: " << boss.baseAttack << ")\n";
@@ -71,6 +77,7 @@ void startBattle(int row, int col) {
     } else {
         cout << "\nYou defeated " << boss.name << "!\n";
         player.experience += 15;
+        player.bossesDefeated[id] = true;
         levelUpIfNeeded();
     }
 }

@@ -1,3 +1,4 @@
+
 #include "Player.h"
 #include <iostream>
 using namespace std;
@@ -14,6 +15,7 @@ void createPlayer(int row, int col) {
     player.col = col;
     player.level = 1;
     player.experience = 0;
+    for (int i = 0; i < 3; ++i) player.bossesDefeated[i] = false;
     cout << "Player created successfully in Secret Con+inen+!\n";
 }
 

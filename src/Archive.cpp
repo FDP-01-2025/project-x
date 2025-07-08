@@ -1,8 +1,11 @@
+
 #include "Archive.h"
 #include "Player.h"
 #include <fstream>
 #include <iostream>
 using namespace std;
+
+extern char map[7][7];
 
 void saveGame() {
     ofstream file("savegame.txt");
@@ -15,6 +18,11 @@ void saveGame() {
         file << player.col << endl;
         file << player.level << endl;
         file << player.experience << endl;
+        for (int i = 0; i < 3; ++i)
+            file << player.bossesDefeated[i] << endl;
+        for (int i = 0; i < 7; ++i)
+            for (int j = 0; j < 7; ++j)
+                file << map[i][j];
         file.close();
         cout << "Game saved in Secret Con+inen+!" << endl;
     } else {
@@ -33,6 +41,12 @@ bool loadGame() {
         file >> player.col;
         file >> player.level;
         file >> player.experience;
+        for (int i = 0; i < 3; ++i)
+            file >> player.bossesDefeated[i];
+        char dummy = file.get(); // consumir newline
+        for (int i = 0; i < 7; ++i)
+            for (int j = 0; j < 7; ++j)
+                map[i][j] = file.get();
         file.close();
         cout << "Game loaded successfully!\n";
         return true;

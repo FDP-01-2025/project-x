@@ -1,3 +1,4 @@
+
 #ifndef PLAYER_H
 #define PLAYER_H
 
@@ -12,6 +13,7 @@ struct Player {
     int row, col;
     int level;
     int experience;
+    bool bossesDefeated[3];  // NUEVO: para saber qué jefes ya fueron vencidos
 };
 
 extern Player player;
