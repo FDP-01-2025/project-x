@@ -47,7 +47,7 @@ Un rpg simple, donde el jugador deberá explorar un continente (mapa), formado p
 
    -  Y/N ---> Responder preguntas como "Deseas curarte?" o "Cargar partida?"
 
-   5- Simbolos del Mapa
+   5. Simbolos del Mapa
       -	P → Tu posición actual
 
       -	E → Entrada a una ciudad (te permite curarte)
@@ -73,7 +73,7 @@ Un rpg simple, donde el jugador deberá explorar un continente (mapa), formado p
 
    8. BATALLAS CONTRA JEFES
       Vas a enfrentar a jefes como Mr. Cipher, General Byte o Queen Algorithmia.
-   Puedes elegir entre:
+      Puedes elegir entre:
       - 1 → Atacar
       - 2 → Defender (reduce el daño recibido)
    Si mueres:
