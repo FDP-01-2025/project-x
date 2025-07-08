@@ -32,7 +32,7 @@ Un rpg simple, donde el jugador deberá explorar un continente (mapa), formado p
 3. Corre el código
 
 4. TECLAS IMPORTANTES
-   W ---> Moverse hacia arriba
+   W ---> Moverse hacia arriba 
    S ---> Moverse hacia abajo
    A ---> Moverse hacia la izquierda
    D ---> Moverse hacia la derecha
@@ -41,12 +41,17 @@ Un rpg simple, donde el jugador deberá explorar un continente (mapa), formado p
    Y/N ---> Responder preguntas como "Deseas curarte?" o "Cargar partida?"
 
    5. Simbolos del Mapa
-      •	P → Tu posición actual
-      •	E → Entrada a una ciudad (te permite curarte)
-      •	T → Entrada a un minijuego
-      •	J → Batalla contra un jefe
-      •	X → Obstáculo (no se puede pasar)
-      •	. → Camino libre
+      -	P → Tu posición actual
+
+      -	E → Entrada a una ciudad (te permite curarte)
+
+      -	T → Entrada a un minijuego
+
+      -	J → Batalla contra un jefe
+
+      -	X → Obstáculo (no se puede pasar)
+
+      -  . → Camino libre
    
    6. EN LAS CIUDADES
       Puedes curarte si tienes al menos 5 monedas.
