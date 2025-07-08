@@ -1,4 +1,4 @@
-
+//LLAMAR EL INICIO DEL JUEGO
 #include <iostream>
 #include "src/Game.h"
 using namespace std;
