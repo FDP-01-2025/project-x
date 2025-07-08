@@ -26,3 +26,51 @@ Un rpg simple, donde el jugador deberá explorar un continente (mapa), formado p
 1. Clona este repositorio en tu máquina local:
    ```bash
    git clone [URL del repositorio]
+
+2. Abre la carpeta del proyecto en c++ 
+
+3. Corre el código
+
+4. TECLAS IMPORTANTES
+   W ---> Moverse hacia arriba
+   S ---> Moverse hacia abajo
+   A ---> Moverse hacia la izquierda
+   D ---> Moverse hacia la derecha
+   G ---> Guardar el progreso
+   Q ---> Salir del juego
+   Y/N ---> Responder preguntas como "Deseas curarte?" o "Cargar partida?"
+
+   5. Simbolos del Mapa
+      •	P → Tu posición actual
+      •	E → Entrada a una ciudad (te permite curarte)
+      •	T → Entrada a un minijuego
+      •	J → Batalla contra un jefe
+      •	X → Obstáculo (no se puede pasar)
+      •	. → Camino libre
+   
+   6. EN LAS CIUDADES
+      Puedes curarte si tienes al menos 5 monedas.
+      La curación te regenera toda la vida.
+      Si no quieres curarte, simplemente respondé N.
+
+   7. MINIJUEGOS
+      Adivina el número (1 al 10)
+      Trivia (preguntas de cultura general)
+      Par o impar (elegí si el número generado será par o impar)
+      Si ganas, recibes monedas y experiencia.
+
+   8. BATALLAS CONTRA JEFES
+      Vas a enfrentar a jefes como Mr. Cipher, General Byte o Queen Algorithmia.
+   Puedes elegir entre:
+      - 1 → Atacar
+      - 2 → Defender (reduce el daño recibido)
+   Si mueres:
+      - Puedes reiniciar o cargar tu último guardado.
+
+   9. SUBIDA DE NIVEL
+      Ganas experiencia al derrotar jefes y jugar minijuegos.
+      Cada vez que acumulás suficiente experiencia (por ejemplo, 30 XP), subes de nivel.
+      Al subir de nivel:
+         - Aumenta tu vida máxima
+         - Aumenta el daño que haces
+
