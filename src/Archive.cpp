@@ -43,7 +43,7 @@ bool loadGame() {
         file >> player.experience;
         for (int i = 0; i < 3; ++i)
             file >> player.bossesDefeated[i];
-        char dummy = file.get(); // consumir newline
+        char dummy = file.get(); 
         for (int i = 0; i < 7; ++i)
             for (int j = 0; j < 7; ++j)
                 map[i][j] = file.get();
