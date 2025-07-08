@@ -22,7 +22,7 @@ char map[ROWS][COLS] = {
     {'.', '.', '.', '.', 'T', '.', '.'},
     {'.', 'J', '.', 'E', '.', 'X', '.'}
 };
-
+//PARA CUANDO SE REINICIA EL JUEGO
 const char ORIGINAL_MAP[ROWS][COLS] = {
     {'.', '.', 'E', '.', '.', 'J', '.'},
     {'.', 'X', '.', '.', 'X', '.', '.'},
